@@ -6,6 +6,12 @@ Tips:
 2. This library also suport programs that using C++. 
 3. The demo is a x86 application. you can use x64 if you like.
 
+Usage steps (C++):
+1. Include GolbalKeyboard.h
+2. Use GlobalKeyboard.lib (x86 or x64)
+3. Copy "GlobalKeyboard.dll" to your .exe directory.
+4. Set The Callback using SetGlobalKeyListner(). then you can get the global keys.
+
 Usage steps (C#):
 1. Download and run the solusion, if you can run the demo, next step.
 2. Copy "GlobalKeySharpApi.cs" to your own project.
