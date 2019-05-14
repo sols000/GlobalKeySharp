@@ -3,5 +3,5 @@
 ################################################################################
 
 /.vs
-/GlobalKeySharp/bin/Debug
+/GlobalKeySharp/bin/Debug/GlobalKeySharp*
 /GlobalKeySharp/obj/Debug

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -24,5 +25,39 @@ namespace GlobalKeySharp
         {
             InitializeComponent();
         }
+
+        private static pfnKeyBoardEvent _OnKeyBoardEvent;
+
+        private void OnMainLoaded(object sender, RoutedEventArgs e)
+        {
+            _OnKeyBoardEvent = new pfnKeyBoardEvent(OnKeyBoardEvent);
+            GlobalKeySharpApi.SetGlobalKeyListner(Marshal.GetFunctionPointerForDelegate(_OnKeyBoardEvent));
+        }
+
+        private void OnKeyBoardEvent(uint KeyCode, bool bPressed)
+        {
+            if (!bPressed)
+            {
+                return;
+            }
+            Dispatcher.Invoke(() =>
+            {
+                if (KeyCode == 'Q')//Q is Pre
+                {
+                    Console.WriteLine("退出SteamVR: ");
+                }
+                else if (KeyCode == 'S')
+                {
+                    Console.WriteLine("启动SteamVR: ");
+                }
+
+                if (Keyboard.IsKeyDown(Key.LeftCtrl) || Keyboard.IsKeyDown(Key.RightCtrl))
+                {
+
+                }
+            });
+
+        }
+
     }
 }
