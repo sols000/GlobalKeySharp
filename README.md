@@ -4,7 +4,7 @@ Global key hook, Non conflict hotkey, Keyboard Nonitor
 Tips: 
 1. This is a keyboard hook library running on Windows.
 2. This library also suport programs that using C++. 
-3.The demo is a x86 application. you can use x64 if you like.
+3. The demo is a x86 application. you can use x64 if you like.
 
 Usage steps (C#):
 1. Download and run the solusion, if you can run the demo, next step.
