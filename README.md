@@ -16,13 +16,17 @@ private static pfnKeyBoardEvent _OnKeyBoardEvent;
 
 private void OnMainLoaded(object sender, RoutedEventArgs e)
 {
-   _OnKeyBoardEvent = new pfnKeyBoardEvent(OnKeyBoardEvent);
+
+  _OnKeyBoardEvent = new pfnKeyBoardEvent(OnKeyBoardEvent);
    GlobalKeySharpApi.SetGlobalKeyListner(Marshal.GetFunctionPointerForDelegate(_OnKeyBoardEvent));
+   
 }
 
 private void OnKeyBoardEvent(uint KeyCode, bool bPressed)
 {
+
    Dispatcher.Invoke(() =>
      {//Do Any thing you like!
      });
+     
 }
