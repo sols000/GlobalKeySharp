@@ -13,11 +13,13 @@ Usage steps (C#):
 4. See the demo code "MainWindow.xaml.cs"
 
 private static pfnKeyBoardEvent _OnKeyBoardEvent;
- private void OnMainLoaded(object sender, RoutedEventArgs e)
+
+private void OnMainLoaded(object sender, RoutedEventArgs e)
 {
    _OnKeyBoardEvent = new pfnKeyBoardEvent(OnKeyBoardEvent);
    GlobalKeySharpApi.SetGlobalKeyListner(Marshal.GetFunctionPointerForDelegate(_OnKeyBoardEvent));
 }
+
 private void OnKeyBoardEvent(uint KeyCode, bool bPressed)
 {
    Dispatcher.Invoke(() =>
