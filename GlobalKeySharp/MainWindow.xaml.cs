@@ -36,24 +36,20 @@ namespace GlobalKeySharp
 
         private void OnKeyBoardEvent(uint KeyCode, bool bPressed)
         {
-            if (!bPressed)
-            {
-                return;
-            }
+            //UI Needs Dispatcher 
             Dispatcher.Invoke(() =>
             {
-                if (KeyCode == 'Q')//Q is Pre
-                {
-                    Console.WriteLine("退出SteamVR: ");
-                }
-                else if (KeyCode == 'S')
-                {
-                    Console.WriteLine("启动SteamVR: ");
-                }
+                //Sigle Key Event
+                int Index = KeyHistory.Items.Add("Key:  "+(char)KeyCode+" bPressed:"+ bPressed);
 
+                //Muti Key (Hot Key) Event
                 if (Keyboard.IsKeyDown(Key.LeftCtrl) || Keyboard.IsKeyDown(Key.RightCtrl))
                 {
-
+                    //Hot Key Example
+                    if(KeyCode == 'S' && bPressed == true)
+                    {
+                        MessageBox.Show("Ctrl + S is Fired");
+                    }
                 }
             });
 

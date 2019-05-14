@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="437" Width="609" Loaded="OnMainLoaded">
     <Grid>
+        <ListBox x:Name="KeyHistory" HorizontalAlignment="Left" Width="190" Background="#FFB8B8B8" Margin="10,30,0,10"/>
+        <Label Content="KeyHistory:" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="85" Margin="10,5,0,0"/>
+        <Label Content="Type &quot;Ctrl + S&quot;, To Test Hot Key Demo!" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="275" Margin="255,170,0,0"/>
 
     </Grid>
 </Window>
